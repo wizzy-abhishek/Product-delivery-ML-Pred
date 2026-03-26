@@ -22,7 +22,7 @@ public class Product {
     private String name;
 
     @Column(columnDefinition = "TEXT")
-    private String desc;
+    private String description;
 
     private ProductType productType;
 
