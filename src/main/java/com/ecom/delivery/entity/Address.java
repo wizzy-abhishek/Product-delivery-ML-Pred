@@ -15,5 +15,5 @@ public class Address {
     private String state;
 
     @Column(nullable = false)
-    private Long pincode;
+    private int pincode;
 }
