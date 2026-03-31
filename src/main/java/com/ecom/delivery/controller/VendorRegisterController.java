@@ -1,6 +1,6 @@
 package com.ecom.delivery.controller;
 
-import com.ecom.delivery.dto.request.VendorRegistrationDTO;
+import com.ecom.delivery.dto.registration.VendorRegistrationDTO;
 import com.ecom.delivery.service.VendorService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +19,6 @@ public class VendorRegisterController {
 
     @PostMapping()
     public ResponseEntity<String> registerVendor(@Valid @RequestBody VendorRegistrationDTO vendorDataDTO){
-        return ResponseEntity.ok("");
+        return ResponseEntity.ok(vendorService.addVendor(vendorDataDTO));
     }
 }

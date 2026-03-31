@@ -1,8 +1,10 @@
 package com.ecom.delivery.entity;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 @Entity
+@NoArgsConstructor
 public class Address {
 
     @Id
@@ -16,4 +18,10 @@ public class Address {
 
     @Column(nullable = false)
     private int pincode;
+
+    public Address(String district, String state, int pincode) {
+        this.district = district;
+        this.state = state;
+        this.pincode = pincode;
+    }
 }

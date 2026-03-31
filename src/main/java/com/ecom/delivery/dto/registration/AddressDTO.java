@@ -1,4 +1,4 @@
-package com.ecom.delivery.dto.request;
+package com.ecom.delivery.dto.registration;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;

@@ -20,8 +20,10 @@ public class Product {
     @Column(columnDefinition = "TEXT")
     private String description;
 
+    @Enumerated(EnumType.STRING)
     private ProductType productType;
 
+    @Enumerated(EnumType.STRING)
     private ProductCategory productCategory;
 
     @ManyToOne(fetch = FetchType.LAZY)

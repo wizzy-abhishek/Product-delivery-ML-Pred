@@ -1,6 +1,7 @@
 package com.ecom.delivery.service.impl;
 
 import com.ecom.delivery.dto.registration.ProductAdditionRequestDTO;
+import com.ecom.delivery.dto.response.ProductResponseDTO;
 import com.ecom.delivery.entity.Product;
 import com.ecom.delivery.entity.Vendor;
 import com.ecom.delivery.repo.ProductRepo;
@@ -28,5 +29,11 @@ public class ProductServiceImpl implements ProductService {
                 vendor));
 
         return product.getName();
+    }
+
+    @Override
+    public ProductResponseDTO getProduct(Long productId) {
+        Product product = productRepo.findById(productId).orElseThrow();
+        return new ProductResponseDTO(product.getName(), product.getDescription(), "") ;
     }
 }
