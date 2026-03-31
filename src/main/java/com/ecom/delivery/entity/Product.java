@@ -5,15 +5,9 @@ import com.ecom.delivery.entity.enums.ProductType;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@RequiredArgsConstructor
 public class Product {
 
     @Id
@@ -31,4 +25,16 @@ public class Product {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Vendor vendor;
+
+    public Product(String name,
+                   String description,
+                   ProductType productType,
+                   ProductCategory productCategory,
+                   Vendor vendor) {
+        this.name = name;
+        this.description = description;
+        this.productType = productType;
+        this.productCategory = productCategory;
+        this.vendor = vendor;
+    }
 }
