@@ -3,16 +3,17 @@ package com.ecom.delivery.entity;
 import com.ecom.delivery.entity.enums.ProductCategory;
 import com.ecom.delivery.entity.enums.ProductType;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@RequiredArgsConstructor
 public class Product {
 
     @Id
@@ -28,5 +29,6 @@ public class Product {
 
     private ProductCategory productCategory;
 
-
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Vendor vendor;
 }
