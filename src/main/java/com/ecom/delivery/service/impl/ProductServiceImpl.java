@@ -1,6 +1,6 @@
 package com.ecom.delivery.service.impl;
 
-import com.ecom.delivery.dto.request.ProductAdditionRequestDTO;
+import com.ecom.delivery.dto.registration.ProductAdditionRequestDTO;
 import com.ecom.delivery.entity.Product;
 import com.ecom.delivery.entity.Vendor;
 import com.ecom.delivery.repo.ProductRepo;

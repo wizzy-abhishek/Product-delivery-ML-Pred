@@ -1,6 +1,6 @@
 package com.ecom.delivery.service;
 
-import com.ecom.delivery.dto.request.ProductAdditionRequestDTO;
+import com.ecom.delivery.dto.registration.ProductAdditionRequestDTO;
 
 public interface ProductService {
 

@@ -1,7 +1,6 @@
 package com.ecom.delivery.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,7 +9,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class Vendor {
 
     @Id
@@ -27,4 +25,9 @@ public class Vendor {
             fetch = FetchType.LAZY)
     private Address address;
 
+    public Vendor(String gstNumber, String name, Address address) {
+        this.gstNumber = gstNumber;
+        this.name = name;
+        this.address = address;
+    }
 }

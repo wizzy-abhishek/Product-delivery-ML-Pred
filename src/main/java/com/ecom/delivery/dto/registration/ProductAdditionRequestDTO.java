@@ -1,4 +1,4 @@
-package com.ecom.delivery.dto.request;
+package com.ecom.delivery.dto.registration;
 
 import com.ecom.delivery.entity.enums.ProductCategory;
 import com.ecom.delivery.entity.enums.ProductType;
