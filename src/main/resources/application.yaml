@@ -14,3 +14,6 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+
+
+ml-model: http://127.0.0.1:5000/predict
