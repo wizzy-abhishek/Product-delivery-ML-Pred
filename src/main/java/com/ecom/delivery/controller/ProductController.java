@@ -15,9 +15,10 @@ public class ProductController {
 
     private final ProductService productService;
 
-    @GetMapping("/{productId}")
-    public ResponseEntity<ProductResponseDTO> getProduct(@PathVariable Long productId){
-        return ResponseEntity.ok(productService.getProduct(productId));
+    @GetMapping("/{productId}/{userPincode}")
+    public ResponseEntity<ProductResponseDTO> getProduct(@PathVariable Long productId,
+                                                         @PathVariable int userPincode){
+        return ResponseEntity.ok(productService.getProduct(productId, userPincode));
     }
 
     @PostMapping()

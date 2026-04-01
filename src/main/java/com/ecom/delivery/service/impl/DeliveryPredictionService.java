@@ -13,8 +13,8 @@ public class DeliveryPredictionService {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
-    @Value("${ml-model}")
-    private static String ML_MODEL_API;
+    @Value("${ml_model}")
+    private String ML_MODEL_API;
 
     public DeliveryPredictionResponse predict(int pickupPrefix, int deliveryPrefix,
                                               String category, String weightBucket) {

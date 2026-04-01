@@ -16,6 +16,7 @@ public class ProductServiceImpl implements ProductService {
 
     private final ProductRepo productRepo;
     private final VendorRepo vendorRepo;
+    private final DeliveryPredictionService deliveryPredictionService;
 
     @Override
     public String addProduct(ProductAdditionRequestDTO productDTO) {
@@ -26,14 +27,22 @@ public class ProductServiceImpl implements ProductService {
                 productDTO.description(),
                 productDTO.productType(),
                 productDTO.productCategory(),
-                vendor));
+                vendor,
+                productDTO.weight()));
 
         return product.getName();
     }
 
     @Override
-    public ProductResponseDTO getProduct(Long productId) {
+    public ProductResponseDTO getProduct(Long productId, int userPincode) {
         Product product = productRepo.findById(productId).orElseThrow();
-        return new ProductResponseDTO(product.getName(), product.getDescription(), "") ;
+        var vendorPin = product.getVendor().getAddress().getPincode()/ 10000;
+        userPincode /= 10000;
+
+        var deliveryDetails = deliveryPredictionService.predict(vendorPin,  userPincode,
+                product.getProductType().toString(), product.getWeight().toString().replaceAll("_", " "));
+        return new ProductResponseDTO(product.getName(),
+                product.getDescription(),
+                deliveryDetails.toString()) ;
     }
 }

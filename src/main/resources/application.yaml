@@ -10,10 +10,10 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
 
-ml-model: http://127.0.0.1:5000/predict
+ml_model: http://127.0.0.1:5000/predict
