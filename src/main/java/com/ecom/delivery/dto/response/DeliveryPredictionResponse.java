@@ -19,7 +19,9 @@ public class DeliveryPredictionResponse {
         @Override
         public String toString() {
             return """
-               {day= %s, probability = %s}"""
+               {
+                    day= %s, probability = %s
+               }"""
                     .formatted(day, probability);
         }
     }

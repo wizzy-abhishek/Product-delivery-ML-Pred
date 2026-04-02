@@ -43,6 +43,6 @@ public class ProductServiceImpl implements ProductService {
                 product.getProductType().toString(), product.getWeight().toString().replaceAll("_", " "));
         return new ProductResponseDTO(product.getName(),
                 product.getDescription(),
-                deliveryDetails.toString()) ;
+                deliveryDetails) ;
     }
 }
